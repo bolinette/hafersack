@@ -14,10 +14,13 @@ $ pip install hafersack  # or use your preferred package manager
 Creating a singleton Hafersack instance is recommended, but not required.
 As long as you use the same key, you can access the same metadata from different Hafersack instances.
 
+Make sure to use distinct keys to avoid collisions with other libraries using Hafersack.
+Storing your keys in one place is a good idea to avoid typos anc collisions within your own code.
+
 ```python
 from hafersack import Hafersack
 
-sack = Hafersack()
+sack = Hafersack("my_unique_key")
 
 class MyClass:
     pass
